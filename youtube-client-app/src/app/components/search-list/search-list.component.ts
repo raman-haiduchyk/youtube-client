@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ISearchResponse } from '../../models/search-response.model';
+import { IResponseItem } from '../../models/response-item.model';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-search-list',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-list.component.scss']
 })
 export class SearchListComponent implements OnInit {
+
+  public responseData: ISearchResponse;
 
   constructor() { }
 
