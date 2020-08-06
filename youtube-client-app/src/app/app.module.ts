@@ -7,6 +7,13 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { SearchItemComponent } from './components/search-item/search-item.component';
 import { AuthorizationFormComponent } from './components/authorization-form/authorization-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FilterBlockComponent } from './components/filter-block/filter-block.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -14,11 +21,18 @@ import { HeaderComponent } from './components/header/header.component';
     SearchListComponent,
     SearchItemComponent,
     AuthorizationFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterBlockComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

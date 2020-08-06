@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISearchResponse } from '../../models/search-response.model';
 import { IResponseItem } from '../../models/response-item.model';
+import { responseYouTube } from '../../mocked/mocked-response';
 import { from } from 'rxjs';
 
 @Component({
@@ -15,6 +16,7 @@ export class SearchListComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
+    this.responseData = responseYouTube;
   }
 
 }

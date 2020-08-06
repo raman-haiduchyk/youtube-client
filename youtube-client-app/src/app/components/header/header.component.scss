@@ -1,0 +1,18 @@
+:host {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.main-header-part {
+  display: flex;
+  justify-content: center;
+}
+
+mat-form-field{
+  flex-basis: 40%;
+  margin-right: 40px;
+}
