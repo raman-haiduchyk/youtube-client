@@ -3,7 +3,7 @@ export interface IResponseItem {
   etag: string;
   id: string;
   snippet: ISnippet;
-  statistic: IStatistic;
+  statistics: IStatistic;
 }
 
 interface ISnippet {
@@ -16,6 +16,7 @@ interface ISnippet {
   tags: string[];
   categoryId: string;
   liveBroadcastContent: string;
+  defaultLanguage?: string;
   localized: ILocalized;
   defaultAudioLanguage: string;
 }
@@ -32,7 +33,7 @@ interface IThumbnails {
   default: IThumbnail;
   medium: IThumbnail;
   high: IThumbnail;
-  standart: IThumbnail;
+  standard: IThumbnail;
   maxres: IThumbnail;
 }
 
