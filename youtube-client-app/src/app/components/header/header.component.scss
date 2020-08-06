@@ -3,7 +3,7 @@
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-items: center;
   align-content: center;
 }
 
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-mat-form-field{
+.search-video-input {
   flex-basis: 40%;
   margin-right: 40px;
 }

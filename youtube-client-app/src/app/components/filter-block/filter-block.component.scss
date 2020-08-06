@@ -1,0 +1,19 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  text-decoration: underline;
+  margin: 3px;
+}
+
+div {
+  margin: 3px;
+}
+
+.filter-video-input {
+  margin-left: 5px;
+}

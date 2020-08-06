@@ -1,14 +1,14 @@
 <div class="main-header-part">
-  <mat-form-field>
-    <input matInput placeholder="Search for video"x>
+  <mat-form-field class="search-video-input">
+    <input matInput placeholder="Search for video">
   </mat-form-field>
 
-  <button mat-mini-fab color="primary" aria-label="filter icon" (click)="showFilter()">
+  <button mat-icon-button color="primary" aria-label="filter icon" (click)="showFilter()">
     <mat-icon>filter_list</mat-icon>
   </button>
 </div>
 
-<div *ngIf="filterIsShown">
+<ng-template [ngIf]="filterIsShown">
   <app-filter-block></app-filter-block>
-</div>
+</ng-template>
 
