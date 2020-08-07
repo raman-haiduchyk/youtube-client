@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +10,15 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   public filterIsShown: boolean = false;
+  public userName: string = 'user';
 
-  constructor() { }
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter_icon.svg'));
+    matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logo_icon.svg'));
+  }
 
   public showFilter(): void {
     this.filterIsShown = !this.filterIsShown;

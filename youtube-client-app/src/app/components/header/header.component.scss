@@ -10,9 +10,37 @@
 .main-header-part {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 40px;
+  height: auto;
+  width: auto;
+  color: #2f80ed;
+}
+
+.logo {
+  font-size: 60px;
+  flex-basis: 25%;
+  text-align: end;
+  padding-right: 2%;
+}
+
+.avatar {
+  flex-basis: 5%;
+}
+
+.name {
+  flex-basis: 20%;
+  text-align: end;
 }
 
 .search-video-input {
-  flex-basis: 40%;
-  margin-right: 40px;
+  flex-basis: 45%;
+}
+
+.filter-button{
+  background-color: #2f80ed;
+  margin-left: 2%;
 }

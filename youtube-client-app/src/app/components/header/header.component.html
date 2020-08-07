@@ -1,11 +1,16 @@
 <div class="main-header-part">
+  <mat-icon class="icon logo">play_circle_filled</mat-icon>
   <mat-form-field class="search-video-input">
     <input matInput placeholder="Search for video">
   </mat-form-field>
 
-  <button mat-icon-button color="primary" aria-label="filter icon" (click)="showFilter()">
-    <mat-icon>filter_list</mat-icon>
+  <button mat-mini-fab color="primary" class="filter-button" aria-label="filter icon" (click)="showFilter()">
+    <mat-icon svgIcon="filter"></mat-icon>
   </button>
+
+  <div class="name">{{userName}}</div>
+  <mat-icon class="icon avatar">account_circle</mat-icon>
+
 </div>
 
 <ng-template [ngIf]="filterIsShown">

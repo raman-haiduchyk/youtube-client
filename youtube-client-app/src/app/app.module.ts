@@ -9,11 +9,12 @@ import { AuthorizationFormComponent } from './components/authorization-form/auth
 import { HeaderComponent } from './components/header/header.component';
 import { FilterBlockComponent } from './components/filter-block/filter-block.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSortModule} from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSortModule
+    MatSortModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
