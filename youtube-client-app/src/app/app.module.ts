@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSortModule,
+    MatCardModule,
     HttpClientModule,
   ],
   providers: [],

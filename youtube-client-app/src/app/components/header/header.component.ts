@@ -17,7 +17,6 @@ export class HeaderComponent {
     private domSanitizer: DomSanitizer
   ) {
     matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter_icon.svg'));
-    matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logo_icon.svg'));
   }
 
   public showFilter(): void {

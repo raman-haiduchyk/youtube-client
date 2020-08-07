@@ -1,1 +1,20 @@
-<p>search-item works!</p>
+<mat-card>
+  <img mat-card-image src={{responseItemData.snippet.thumbnails.maxres.url}}>
+  <mat-card-content class="statictic">
+    <mat-icon>remove_red_eye</mat-icon>
+    {{responseItemData.statistics.viewCount}}
+    <mat-icon svgIcon="like"></mat-icon>
+    {{responseItemData.statistics.viewCount}}
+    <mat-icon svgIcon="dislike"></mat-icon>
+    {{responseItemData.statistics.dislikeCount}}
+    <mat-icon>comment</mat-icon>
+    {{responseItemData.statistics.commentCount}}
+  </mat-card-content>
+  <mat-card-title>{{responseItemData.snippet.title}}</mat-card-title>
+  <mat-card-actions>
+    <button mat-raised-button class="more-button">More...</button>
+  </mat-card-actions>
+  <mat-card-footer>
+
+  </mat-card-footer>
+</mat-card>
