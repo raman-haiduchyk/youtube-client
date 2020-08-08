@@ -1,9 +1,26 @@
 mat-card {
   box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   text-align: center;
   background-color: whitesmoke;
-  overflow: hidden;
+}
+
+mat-card-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    margin: 0 0 0 10px;
+    mat-icon {
+      vertical-align: middle;
+    }
+  }
+}
+
+mat-card-actions {
   button {
     color: white;
     background-color: #2f80ed;
@@ -20,14 +37,6 @@ mat-card-footer {
   background-color: black;
 }
 
-mat-card-content{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  div {
-    margin: 0 0 0 10px;
-    mat-icon {
-      vertical-align: middle;
-    }
-  }
+mat-card-title {
+  height: 100%;
 }

@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { FilterService } from './services/filter.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [FilterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
