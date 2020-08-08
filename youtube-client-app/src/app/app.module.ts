@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { FilterService } from './services/filter.service';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FilterService } from './services/filter.service';
     SearchItemComponent,
     AuthorizationFormComponent,
     HeaderComponent,
-    FilterBlockComponent
+    FilterBlockComponent,
+    FilterPipe
   ],
   imports: [
     AppRoutingModule,

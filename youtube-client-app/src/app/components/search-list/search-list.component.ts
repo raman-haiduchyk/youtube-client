@@ -3,6 +3,7 @@ import { ISearchResponse } from '../../models/search-response.model';
 import { IResponseItem } from '../../models/response-item.model';
 import { responseYouTube } from '../../mocked/mocked-response';
 import { FilterService } from '../../services/filter.service';
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-search-list',
@@ -23,7 +24,6 @@ export class SearchListComponent {
       this.dateFilterState = filters[0];
       this.viewFilterState = filters[1];
       this.wordFilterState = filters[2];
-      console.log(this);
     });
   }
 
