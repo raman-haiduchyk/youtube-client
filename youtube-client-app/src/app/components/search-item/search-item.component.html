@@ -1,5 +1,5 @@
-<mat-card>
-  <img mat-card-image src={{responseItemData.snippet.thumbnails.maxres.url}}>
+<mat-card [appBorderColor]="borderBottomColor">
+  <img src={{responseItemData.snippet.thumbnails.maxres.url}}>
 
   <mat-card-content>
     <div>
@@ -28,6 +28,4 @@
   <mat-card-actions>
     <button mat-raised-button class="more-button">More...</button>
   </mat-card-actions>
-  {{responseItemData.snippet.publishedAt}}
-  <mat-card-footer></mat-card-footer>
 </mat-card>

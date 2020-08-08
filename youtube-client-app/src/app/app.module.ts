@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { FilterService } from './services/filter.service';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BorderColorDirective } from './directives/border-color.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AuthorizationFormComponent,
     HeaderComponent,
     FilterBlockComponent,
-    FilterPipe
+    FilterPipe,
+    BorderColorDirective
   ],
   imports: [
     AppRoutingModule,
