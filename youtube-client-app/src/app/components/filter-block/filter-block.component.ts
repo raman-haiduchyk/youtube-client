@@ -1,16 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
+import { fromEvent, Observable, Subscription } from 'rxjs';
+import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
+
 @Component({
   selector: 'app-filter-block',
   templateUrl: './filter-block.component.html',
   styleUrls: ['./filter-block.component.scss']
 })
-export class FilterBlockComponent {
+export class FilterBlockComponent implements AfterViewInit {
 
   public dateArrowChar: string = null;
   public viewArrowChar: string = null;
 
+  public filterInputSub: Subscription;
+
   constructor(private filterService: FilterService) { }
+
+  public ngAfterViewInit(): void {
+
+    this.filterInputSub = fromEvent(document.getElementById('filter-input'), 'input').pipe(
+      map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
+      debounceTime(500),
+      distinctUntilChanged()
+    ).subscribe(inputValue => {
+    this.filterService.changeWordFilter(inputValue);
+   });
+
+  }
 
   public changeDateFilterState(): void {
     this.filterService.changeDateFilter();

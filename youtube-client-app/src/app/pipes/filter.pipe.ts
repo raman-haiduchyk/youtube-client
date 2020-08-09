@@ -21,7 +21,7 @@ export class FilterPipe implements PipeTransform {
       });
       return items;
     } else if (wordFilter != null) {
-      return items.filter((item) => item.snippet.title.indexOf(wordFilter) !== -1);
+      return items.filter((item) => item.snippet.title.toLowerCase().indexOf(wordFilter.toLowerCase()) !== -1);
     }
     return items;
   }
