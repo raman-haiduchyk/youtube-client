@@ -2,7 +2,7 @@ import { FilterPipe } from './filter.pipe';
 
 describe('FilterPipe', () => {
   it('create an instance', () => {
-    const pipe = new FilterPipe();
+    const pipe: FilterPipe = new FilterPipe();
     expect(pipe).toBeTruthy();
   });
 });
