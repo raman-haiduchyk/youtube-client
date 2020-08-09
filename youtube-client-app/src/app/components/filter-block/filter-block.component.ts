@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { FilterService } from '../../services/filter.service';
-import { fromEvent, Observable, Subscription } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
@@ -19,13 +19,16 @@ export class FilterBlockComponent implements AfterViewInit {
 
   public ngAfterViewInit(): void {
 
-    this.filterInputSub = fromEvent(document.getElementById('filter-input'), 'input').pipe(
+    this.filterInputSub = fromEvent(document.getElementById('filter-input'), 'input')
+    .pipe(
       map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
       debounceTime(500),
-      distinctUntilChanged()
-    ).subscribe(inputValue => {
-    this.filterService.changeWordFilter(inputValue);
-   });
+      distinctUntilChanged())
+    .subscribe(inputValue => {
+      this.filterService.changeWordFilter(inputValue);
+      this.dateArrowChar = null;
+      this.viewArrowChar = null;
+    });
 
   }
 

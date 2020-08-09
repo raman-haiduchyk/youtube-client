@@ -8,11 +8,9 @@ import { MatIconRegistry } from '@angular/material/icon';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
 
   @Input() public responseItemData: IResponseItem;
-
-  public borderBottomColor: string = 'brown';
 
   constructor(
     private matIconRegistry: MatIconRegistry,
@@ -20,17 +18,6 @@ export class SearchItemComponent implements OnInit {
   ) {
     matIconRegistry.addSvgIcon('like', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/like_icon.svg'));
     matIconRegistry.addSvgIcon('dislike', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/dislike_icon.svg'));
-  }
-
-  public ngOnInit(): void {
-    let timeInterval: number = Number(new Date()) - Number(this.responseItemData.snippet.publishedAt);
-    if (timeInterval < 1000 * 60 * 60 * 24 * 7) {
-      this.borderBottomColor = 'blue';
-    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30) {
-      this.borderBottomColor = 'green';
-    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30 * 6) {
-      this.borderBottomColor = 'yellow';
-    }
   }
 
 }

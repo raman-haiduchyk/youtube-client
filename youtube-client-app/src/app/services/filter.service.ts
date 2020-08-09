@@ -8,7 +8,7 @@ export class FilterService {
   public viewFilter: boolean = null;
   public wordFilter: string = null;
 
-  public emitter: EventEmitter<[boolean, boolean, string]> = new EventEmitter();
+  public onFilterChange: EventEmitter<[boolean, boolean, string]> = new EventEmitter();
 
   constructor() { }
 
@@ -28,8 +28,7 @@ export class FilterService {
       this.dateFilter = true;
     }
 
-    this.emitter.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
-    console.log('emmited');
+    this.onFilterChange.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
   }
 
   public changeViewFilter(): void {
@@ -42,7 +41,7 @@ export class FilterService {
       this.viewFilter = true;
     }
 
-    this.emitter.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
+    this.onFilterChange.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
   }
 
   public changeWordFilter(word: string): void {
@@ -50,6 +49,6 @@ export class FilterService {
     this.viewFilter = null;
     this.wordFilter = word;
 
-    this.emitter.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
+    this.onFilterChange.emit([this.dateFilter, this.viewFilter, this.wordFilter]);
   }
 }

@@ -26,13 +26,14 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    this.searchInputSub = fromEvent(document.getElementById('search-input'), 'input').pipe(
+    this.searchInputSub = fromEvent(document.getElementById('search-input'), 'input')
+    .pipe(
       map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
       debounceTime(500),
-      distinctUntilChanged()
-    ).subscribe(inputValue => {
+      distinctUntilChanged())
+    .subscribe(inputValue => {
       this.requestService.getResponse();
-   });
+    });
   }
 
   public showFilter(): void {
