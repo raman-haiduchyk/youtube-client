@@ -18,6 +18,11 @@ import { MatCardModule } from '@angular/material/card';
 import { FilterService } from './services/filter.service';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BorderColorDirective } from './directives/border-color.directive';
+import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
+import { RequestService } from './services/request.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { BorderColorDirective } from './directives/border-color.directive';
     HeaderComponent,
     FilterBlockComponent,
     FilterPipe,
-    BorderColorDirective
+    BorderColorDirective,
+    DetailedInfoComponent,
+    NotFoundComponent
   ],
   imports: [
     AppRoutingModule,
@@ -40,8 +47,9 @@ import { BorderColorDirective } from './directives/border-color.directive';
     MatIconModule,
     MatCardModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [FilterService],
+  providers: [FilterService, LoginService, RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { Subscription, fromEvent, from } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RequestService } from '../../services/request.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -21,8 +22,10 @@ export class HeaderComponent implements AfterViewInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private requestService: RequestService,
+    private router: Router
   ) {
-    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter_icon.svg'));
+    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter-icon.svg'));
+    matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logout-icon.svg'));
   }
 
   public ngAfterViewInit(): void {
@@ -38,6 +41,10 @@ export class HeaderComponent implements AfterViewInit {
 
   public showFilter(): void {
     this.filterIsShown = !this.filterIsShown;
+  }
+
+  public logOut(): void {
+    this.router.navigate(['login']);
   }
 
 }

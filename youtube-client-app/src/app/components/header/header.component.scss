@@ -28,8 +28,10 @@
   padding-right: 2%;
 }
 
-.avatar {
-  flex-basis: 5%;
+.header-button {
+  background-color: #2f80ed;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .name {
@@ -41,7 +43,4 @@
   flex-basis: 45%;
 }
 
-.filter-button{
-  background-color: #2f80ed;
-  margin-left: 2%;
-}
+
