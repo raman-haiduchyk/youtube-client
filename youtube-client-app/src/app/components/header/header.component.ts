@@ -4,7 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { Subscription, fromEvent, from } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RequestService } from '../../services/request.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -36,6 +36,9 @@ export class HeaderComponent implements AfterViewInit {
       distinctUntilChanged())
     .subscribe(inputValue => {
       this.requestService.getResponse();
+      if (this.router.url === '/not-found') {
+        this.router.navigate(['main']);
+      }
     });
   }
 

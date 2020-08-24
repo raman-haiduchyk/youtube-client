@@ -8,7 +8,7 @@ export class RequestService {
 
   public onResponseArrived: EventEmitter<ISearchResponse> = new EventEmitter();
 
-  public items: IResponseItem[];
+  public items: IResponseItem[] = null;
 
   constructor() { }
 
