@@ -7,7 +7,7 @@ import { LoginService } from '../../../core/services/login.service';
   templateUrl: './authorization-form.component.html',
   styleUrls: ['./authorization-form.component.scss']
 })
-export class AuthorizationFormComponent implements OnInit {
+export class AuthorizationFormComponent {
 
   public authForm: FormGroup;
 
@@ -19,10 +19,6 @@ export class AuthorizationFormComponent implements OnInit {
       login: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
-  }
-
-  public ngOnInit(): void {
-    this.loginService.logOut();
   }
 
   public onSubmit(): void {

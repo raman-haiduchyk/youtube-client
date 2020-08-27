@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IResponseItem } from '../../models/response-item.model';
-import { FilterService } from '../../core/services/filter.service';
-import { RequestService } from '../../core/services/request.service';
+import { IResponseItem } from '../../../models/response-item.model';
+import { FilterService } from '../../../core/services/filter.service';
+import { RequestService } from '../../../core/services/request.service';
 
 @Component({
   selector: 'app-search-list',

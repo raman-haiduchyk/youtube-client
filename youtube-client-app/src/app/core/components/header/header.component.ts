@@ -5,6 +5,7 @@ import { Subscription, fromEvent, from } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { RequestService } from '../../services/request.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +23,7 @@ export class HeaderComponent implements AfterViewInit {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
     private requestService: RequestService,
+    private loginService: LoginService,
     private router: Router
   ) {
     matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter-icon.svg'));
@@ -47,6 +49,7 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   public logOut(): void {
+    this.loginService.logOut();
     this.router.navigate(['login']);
   }
 

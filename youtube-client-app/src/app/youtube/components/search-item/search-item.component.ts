@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IResponseItem } from '../../models/response-item.model';
+import { IResponseItem } from '../../../models/response-item.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Router } from '@angular/router';

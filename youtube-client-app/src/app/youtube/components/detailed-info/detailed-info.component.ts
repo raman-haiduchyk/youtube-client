@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RequestService } from '../../core/services/request.service';
+import { RequestService } from '../../../core/services/request.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IResponseItem } from '../../models/response-item.model';
+import { IResponseItem } from '../../../models/response-item.model';
 @Component({
   selector: 'app-detailed-info',
   templateUrl: './detailed-info.component.html',
