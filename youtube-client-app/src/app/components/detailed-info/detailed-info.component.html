@@ -1,1 +1,41 @@
-<p>detailed-info works! {{itemIndex}}</p>
+<div class="card">
+
+  <img src={{item.snippet.thumbnails.maxres.url}}>
+
+  <div class="info" [appDateToBorderColor]="item.snippet.publishedAt">
+
+    <div class="card-header">
+      <h2>{{item.snippet.title}}:</h2>
+      <p>{{publishedAt}}</p>
+    </div>
+
+
+    <h3>Description:</h3>
+
+    <p>{{item.snippet.description}}</p>
+
+    <div class="stats">
+      <div>
+        <mat-icon>remove_red_eye</mat-icon>
+        {{item.statistics.viewCount}}
+      </div>
+
+      <div>
+        <mat-icon svgIcon="like"></mat-icon>
+        {{item.statistics.viewCount}}
+      </div>
+
+      <div>
+        <mat-icon svgIcon="dislike"></mat-icon>
+        {{item.statistics.viewCount}}
+      </div>
+
+      <div>
+        <mat-icon>comment</mat-icon>
+        {{item.statistics.viewCount}}
+      </div>
+    </div>
+
+  </div>
+
+</div>

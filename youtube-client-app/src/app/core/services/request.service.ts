@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { responseYouTube } from '../mocked/mocked-response';
-import { ISearchResponse } from '../models/search-response.model';
-import { IResponseItem } from '../models/response-item.model';
+import { responseYouTube } from '../../mocked/mocked-response';
+import { ISearchResponse } from '../../models/search-response.model';
+import { IResponseItem } from '../../models/response-item.model';
 
 @Injectable()
 export class RequestService {
