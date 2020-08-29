@@ -24,7 +24,7 @@ export class SearchItemComponent {
   }
 
   public showDetailedInfo(): void {
-    this.router.navigate(['main', this.itemIndex]);
+    this.router.navigate(['main', this.itemIndex + 1]);
   }
 
 }

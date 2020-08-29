@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { YoutubeRoutingModule } from './youtube-routing.module';
 
 import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
 import { SearchItemComponent } from './components/search-item/search-item.component';
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    YoutubeRoutingModule
   ],
   exports: [
     SearchListComponent,

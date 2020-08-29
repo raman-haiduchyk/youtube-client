@@ -9,9 +9,8 @@ import { AuthorizationFormComponent } from './auth/components/authorization-form
 
 const routes: Routes = [
    { path: '', redirectTo: 'main', pathMatch: 'full'},
-   { path: 'main', component: SearchListComponent, canActivate: [AuthGuard]},
-   { path: 'main/:id', component: DetailedInfoComponent},
-   { path: 'login', component: AuthorizationFormComponent, canActivate: [AlreadyAuthGuard]},
+   { path: 'main', loadChildren: () => import('./youtube/youtube.module').then(m => m.YoutubeModule), canLoad: [AuthGuard]},
+   { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), canLoad: [AlreadyAuthGuard]},
    { path: 'not-found', component: NotFoundComponent},
    { path: '**', redirectTo: 'not-found'}
 ];

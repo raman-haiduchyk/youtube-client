@@ -1,4 +1,4 @@
 <app-search-item *ngFor="let post of requestService.items|filter: dateFilterState : viewFilterState : wordFilterState; let i = index"
   [responseItemData]="post"
-  [itemIndex]="i+1"
+  [itemIndex]="i"
 ></app-search-item>

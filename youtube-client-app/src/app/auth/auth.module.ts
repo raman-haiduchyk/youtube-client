@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizationFormComponent } from './components/authorization-form/authorization-form.component';
 import { SharedModule } from '../shared/shared.module';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [ AuthorizationFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    AuthRoutingModule
   ],
   exports: [ AuthorizationFormComponent ]
 })
