@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Subscription, fromEvent, from } from 'rxjs';
-import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { map, debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 import { RequestService } from '../../services/request.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginService } from '../../services/login.service';
@@ -34,6 +34,7 @@ export class HeaderComponent implements AfterViewInit {
     this.searchInputSub = fromEvent(document.getElementById('search-input'), 'input')
     .pipe(
       map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
+      filter((value: string) => value.length > 2),
       debounceTime(500),
       distinctUntilChanged())
     .subscribe(inputValue => {

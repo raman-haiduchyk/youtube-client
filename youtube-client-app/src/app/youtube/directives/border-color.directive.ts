@@ -14,11 +14,12 @@ export class BorderColorDirective implements OnInit {
 
   public ngOnInit(): void {
     let timeInterval: number = Number(new Date()) - Number(new Date(this.date));
-    if (timeInterval < 1000 * 60 * 60 * 24 * 7) {
+    console.log(timeInterval);
+    if (timeInterval < 1000 * 60 * 60 * 24 * 7) {   // week
       this.color = 'blue';
-    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30) {
+    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30) {   // month
       this.color = 'green';
-    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30 * 6) {
+    } else if (timeInterval < 1000 * 60 * 60 * 24 * 30 * 6) {   // 6 months
       this.color = 'yellow';
     }
     this.renderer2.setStyle(this.elementRef.nativeElement, 'border-bottom-color', this.color);
