@@ -15,7 +15,8 @@ import { LoginService } from '../../services/login.service';
 export class HeaderComponent implements AfterViewInit {
 
   public filterIsShown: boolean = false;
-  public userName: string = 'user';
+  public logoutIsShown: boolean = false;
+  public userName: string;
 
   public searchInputSub: Subscription;
 
@@ -33,14 +34,26 @@ export class HeaderComponent implements AfterViewInit {
   public ngAfterViewInit(): void {
     this.searchInputSub = fromEvent(document.getElementById('search-input'), 'input')
     .pipe(
+      debounceTime(500),
       map((event: KeyboardEvent) => (event.target as HTMLInputElement).value),
       filter((value: string) => value.length > 2),
-      debounceTime(500),
       distinctUntilChanged())
     .subscribe(inputValue => {
       this.requestService.getResponse();
       if (this.router.url === '/not-found') {
         this.router.navigate(['main']);
+      }
+    });
+
+    this.loginService.subject.subscribe(name => {
+      if (name !== null) {
+        this.userName = name;
+        this.logoutIsShown = true;
+        console.log(this.logoutIsShown);
+      } else {
+        this.userName = null;
+        this.logoutIsShown = false;
+        console.log(this.logoutIsShown);
       }
     });
   }

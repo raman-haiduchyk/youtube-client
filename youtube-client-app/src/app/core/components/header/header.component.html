@@ -9,7 +9,7 @@
   </button>
 
   <div class="name">{{userName}}</div>
-  <button mat-mini-fab class="header-button" aria-label="logout icon" (click)="logOut()">
+  <button mat-mini-fab class="header-button" aria-label="logout icon" (click)="logOut()" disabled ="{{!logoutIsShown}}" >
     <mat-icon svgIcon="logout"></mat-icon>
   </button>
 
