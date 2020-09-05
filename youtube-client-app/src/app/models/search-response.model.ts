@@ -3,7 +3,9 @@ import {IResponseItem} from './response-item.model';
 export interface ISearchResponse {
   kind: string;
   etag: string;
-  pageInfo: IPageInfo;
+  nextPageToken?: string;
+  regionCode?: string;
+  pageInfo?: IPageInfo;
   items: IResponseItem[];
 }
 

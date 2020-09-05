@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Subscription, fromEvent, from } from 'rxjs';
@@ -12,7 +12,7 @@ import { LoginService } from '../../services/login.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements OnInit {
 
   public filterIsShown: boolean = false;
   public logoutIsShown: boolean = false;
@@ -31,7 +31,7 @@ export class HeaderComponent implements AfterViewInit {
     matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logout-icon.svg'));
   }
 
-  public ngAfterViewInit(): void {
+  public ngOnInit(): void {
     this.searchInputSub = fromEvent(document.getElementById('search-input'), 'input')
     .pipe(
       debounceTime(500),
@@ -39,7 +39,7 @@ export class HeaderComponent implements AfterViewInit {
       filter((value: string) => value.length > 2),
       distinctUntilChanged())
     .subscribe(inputValue => {
-      this.requestService.getResponse();
+      this.requestService.getResponse(inputValue);
       if (this.router.url === '/not-found') {
         this.router.navigate(['main']);
       }

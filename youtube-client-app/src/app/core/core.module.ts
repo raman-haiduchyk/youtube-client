@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { FilterBlockComponent  } from './components/filter-block/filter-block.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -9,7 +12,7 @@ import { FilterService } from './services/filter.service';
 import { LoginService } from './services/login.service';
 import { RequestService } from './services/request.service';
 
-import { SharedModule } from '../shared/shared.module';
+import { ApiRequestInterceptor } from '../interceptors/api-request.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
   ],
   exports: [
     FilterBlockComponent,
@@ -29,7 +33,8 @@ import { SharedModule } from '../shared/shared.module';
   providers: [
     FilterService,
     LoginService,
-    RequestService
+    RequestService,
+    // { provide: HTTP_INTERCEPTORS, useClass: ApiRequestInterceptor, multi: true },
   ]
 })
 export class CoreModule { }
