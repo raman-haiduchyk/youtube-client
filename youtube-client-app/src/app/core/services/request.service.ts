@@ -1,10 +1,10 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { responseYouTube } from '../../mocked/mocked-response';
 import { ISearchResponse } from '../../models/search-response.model';
 import { IResponseItem } from '../../models/response-item.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { retry, map, combineAll } from 'rxjs/operators';
+import { retry, map, combineAll, switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class RequestService {
@@ -15,11 +15,11 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  public getResponse(queryString: string): void {
+  public getAPIResponse(queryString: string): Observable<ISearchResponse> {
     const firstParams: HttpParams = new HttpParams()
       .set('key', environment.API_KEY);
 
-    this.http
+    return this.http
       .get<ISearchResponse>(`${environment.API_URL}/search`, {
         params: firstParams
         .set('type', 'video')
@@ -29,7 +29,7 @@ export class RequestService {
       })
       .pipe(
         retry(4),
-        map(response => {
+        switchMap(response => {
           let id: string[] = [];
           response.items.forEach(item => {
             id.push(item.id.videoId);
@@ -41,7 +41,6 @@ export class RequestService {
                 .set('part', 'snippet,statistics')
             });
         }),
-      )
-      .subscribe(response => response.subscribe(resp => this.items = resp.items));
+      );
   }
 }
