@@ -1,4 +1,7 @@
-<app-search-item *ngFor="let post of videos$ | async | filter: dateFilterState : viewFilterState : wordFilterState; let i = index"
+<button mat-raised-button (click)="onAddCustomCard()">Add custom card</button>
+<div class="cards">
+  <app-search-item *ngFor="let post of videos$ | async | filter: dateFilterState : viewFilterState : wordFilterState; let i = index"
   [responseItemData]="post"
   [itemIndex]="i"
 ></app-search-item>
+</div>

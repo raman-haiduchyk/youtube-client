@@ -25,6 +25,7 @@ interface ISnippet {
   publishTime?: string;
   localized?: ILocalized;
   defaultAudioLanguage?: string;
+  videoSource?: string;
 }
 
 interface IStatistic {

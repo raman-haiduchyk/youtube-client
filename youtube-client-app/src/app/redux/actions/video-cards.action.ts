@@ -1,7 +1,6 @@
 import { Action } from '@ngrx/store';
 
 import { IResponseItem } from '../../models/response-item.model';
-import { ISearchResponse } from '../../models/search-response.model';
 
 export enum VideoCardsActionTypes {
   setAPICards = 'setAPICards',

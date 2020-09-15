@@ -3,9 +3,11 @@ import { IResponseItem } from '../../../models/response-item.model';
 import { FilterService } from '../../../core/services/filter.service';
 import { RequestService } from '../../../core/services/request.service';
 import { IAppState } from 'src/app/redux/state/app.state';
-import { getVideoCards } from '../../../redux/selectors/video-cards.selector';
+import { getAllVideoCards } from '../../../redux/selectors/video-cards.selector';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ICustomItem } from 'src/app/models/custom-item.model';
 
 @Component({
   selector: 'app-search-list',
@@ -14,21 +16,27 @@ import { Observable } from 'rxjs';
 })
 export class SearchListComponent {
 
-  public responseItems: IResponseItem[] = null;
-
   public dateFilterState: boolean = null;
   public viewFilterState: boolean = null;
   public wordFilterState: string = null;
-  public videos$: Observable<IResponseItem[]>;
 
-  constructor(private filterService: FilterService, public requestService: RequestService, store: Store<IAppState>) {
+  public videos$: Observable<(IResponseItem | ICustomItem)[]>;
+
+  constructor(
+    private filterService: FilterService,
+    public requestService: RequestService,
+    store: Store<IAppState>, private router: Router) {
     filterService.onFilterChange.subscribe((filters) => {
       this.dateFilterState = filters[0];
       this.viewFilterState = filters[1];
       this.wordFilterState = filters[2];
     });
 
-    this.videos$ = store.select(getVideoCards);
+    this.videos$ = store.select(getAllVideoCards);
+  }
+
+  public onAddCustomCard(): void {
+    this.router.navigate(['main', 'admin']);
   }
 
 }

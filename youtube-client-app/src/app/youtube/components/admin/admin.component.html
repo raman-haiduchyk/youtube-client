@@ -11,5 +11,5 @@
   <mat-form-field>
     <input matInput placeholder="Video Link" formControlName="videoLink">
   </mat-form-field>
-  <button mat-raised-button [disabled]="cardForm.invalid">Submit</button>
+  <button mat-raised-button [disabled]="cardForm.invalid" (click)="onSubmit()">Submit</button>
 </form>

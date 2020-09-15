@@ -1,6 +1,4 @@
 import {Effect, ofType, Actions} from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { } from 'rxjs';
 import { VideoCardsActionTypes, SetNewVideoCards } from '../actions/video-cards.action';
 import { Injectable } from '@angular/core';
 import { GetAPIVideoCards } from '../actions/video-cards.action';
