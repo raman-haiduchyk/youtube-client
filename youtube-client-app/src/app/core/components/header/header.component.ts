@@ -29,8 +29,8 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private store: Store<IAppState>
   ) {
-    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/filter-icon.svg'));
-    matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/logout-icon.svg'));
+    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/filter-icon.svg'));
+    matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/logout-icon.svg'));
   }
 
   public ngOnInit(): void {

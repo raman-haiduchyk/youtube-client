@@ -10,6 +10,6 @@ import { MatIconRegistry } from '@angular/material/icon';
 export class NotFoundComponent {
 
   constructor(private domSanitizer: DomSanitizer, private matIconRegistry: MatIconRegistry) {
-    matIconRegistry.addSvgIcon('404', this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/404-icon.svg'));
+    matIconRegistry.addSvgIcon('404', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/404-icon.svg'));
   }
 }
