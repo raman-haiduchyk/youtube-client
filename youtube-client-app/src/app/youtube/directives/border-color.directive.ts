@@ -14,7 +14,6 @@ export class BorderColorDirective implements OnInit {
 
   public ngOnInit(): void {
     let timeInterval: number = Number(new Date()) - Number(new Date(this.date));
-    console.log(timeInterval);
     if (timeInterval < 1000 * 60 * 60 * 24 * 7) {   // week
       this.color = 'blue';
     } else if (timeInterval < 1000 * 60 * 60 * 24 * 30) {   // month

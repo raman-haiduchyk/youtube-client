@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchListComponent } from './youtube/components/search-list/search-list.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
-import { DetailedInfoComponent } from './youtube/components/detailed-info/detailed-info.component';
-import { AuthGuard } from './guards/auth.guard';
-import { AlreadyAuthGuard } from './guards/already-auth.guard';
-import { AuthorizationFormComponent } from './auth/components/authorization-form/authorization-form.component';
+import { AuthGuard } from './auth/guards/auth.guard';
+import { AlreadyAuthGuard } from './auth/guards/already-auth.guard';
 
 const routes: Routes = [
    { path: '', redirectTo: 'main', pathMatch: 'full'},

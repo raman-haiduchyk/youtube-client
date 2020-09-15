@@ -17,8 +17,6 @@ import { RequestService } from './services/request.service';
 import { appReducers } from '../redux/reducers/app.reducer';
 import { VideoCardsEffect } from '../redux/effects/video-cards.effect';
 
-import { ApiRequestInterceptor } from '../interceptors/api-request.interceptor';
-
 @NgModule({
   declarations: [
     FilterBlockComponent,
