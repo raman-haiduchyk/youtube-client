@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
       distinctUntilChanged())
     .subscribe(inputValue => {
       this.store.dispatch({type: VideoCardsActionTypes.getAPICards, payload: inputValue});
-      if (this.router.url === '/not-found') {
+      if (this.router.url === '/not-found' || this.router.url.startsWith('/main/')) {
         this.router.navigate(['main']);
       }
     });
@@ -51,11 +51,9 @@ export class HeaderComponent implements OnInit {
       if (name !== null) {
         this.userName = name;
         this.logoutIsShown = true;
-        console.log(this.logoutIsShown);
       } else {
         this.userName = null;
         this.logoutIsShown = false;
-        console.log(this.logoutIsShown);
       }
     });
   }

@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { UrlTree, Router, CanLoad, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 
+/*
+  redirect to login page
+  if you aren't logged in
+*/
 @Injectable({
   providedIn: 'root'
 })

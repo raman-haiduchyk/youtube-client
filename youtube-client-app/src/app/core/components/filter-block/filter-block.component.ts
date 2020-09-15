@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { FilterService } from '@core/services/filter.service';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
+import { FilterService } from '@core/services/filter.service';
 
 @Component({
   selector: 'app-filter-block',

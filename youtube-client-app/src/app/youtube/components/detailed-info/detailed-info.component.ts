@@ -40,7 +40,6 @@ export class DetailedInfoComponent implements OnInit {
             this.router.navigate(['not-found']);
           }
           this.item = items[params.id - 1];
-          console.log(this.item);
           this.publishedAt = (new Date(this.item.snippet.publishedAt)).toDateString();
         }
       );
