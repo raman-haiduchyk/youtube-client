@@ -15,6 +15,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*":["src/app/core/*"],
+      "@auth/*":["src/app/auth/*"],
+      "@youtube/*":["src/app/youtube/*"],
+      "@shared/*":["src/app/shared/*"],
+      "@redux/*":["src/app/redux/*"]
+    }
   }
 }

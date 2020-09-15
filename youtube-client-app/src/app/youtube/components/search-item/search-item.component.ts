@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IResponseItem } from '../../../models/response-item.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Router } from '@angular/router';
+
+import { IResponseItem } from '@core/models/response-item.model';
 
 @Component({
   selector: 'app-search-item',

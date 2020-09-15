@@ -1,6 +1,6 @@
-import { IAppState } from '../state/app.state';
 import { createSelector } from '@ngrx/store';
-import { IVideoCardsState } from '../state/video-cards.state';
+import { IAppState } from '@redux/state/app.state';
+import { IVideoCardsState } from '@redux/state/video-cards.state';
 
 // tslint:disable-next-line
 const selectAPI = (state: IAppState) => state.videoCards;

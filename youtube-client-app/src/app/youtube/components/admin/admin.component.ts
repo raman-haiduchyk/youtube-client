@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { ICustomItem } from 'src/app/models/custom-item.model';
-import { SetCustomVideoCards } from 'src/app/redux/actions/custom-video-cards.action';
-import { IAppState } from 'src/app/redux/state/app.state';
+
+import { ICustomItem } from '@core/models/custom-item.model';
+import { SetCustomVideoCards } from '@redux/actions/custom-video-cards.action';
+import { IAppState } from '@redux/state/app.state';
 
 @Component({
   selector: 'app-admin',

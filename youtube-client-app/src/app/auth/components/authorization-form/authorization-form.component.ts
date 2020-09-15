@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../core/services/login.service';
+import { LoginService } from '@core/services/login.service';
 @Component({
   selector: 'app-authorization-form',
   templateUrl: './authorization-form.component.html',

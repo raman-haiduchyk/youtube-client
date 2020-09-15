@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthorizationFormComponent } from './components/authorization-form/authorization-form.component';
+import { AuthorizationFormComponent } from '@auth/components/authorization-form/authorization-form.component';
 
 const routes: Routes = [
   { path: '', component: AuthorizationFormComponent }

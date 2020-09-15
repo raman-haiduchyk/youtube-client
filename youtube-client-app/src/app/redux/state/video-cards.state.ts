@@ -1,6 +1,5 @@
-import { ICustomItem } from 'src/app/models/custom-item.model';
-import { IResponseItem } from '../../models/response-item.model';
-import { } from '../../models/search-response.model';
+import { ICustomItem } from '@core/models/custom-item.model';
+import { IResponseItem } from '@core/models/response-item.model';
 
 export interface IVideoCardsState {
   cards: (IResponseItem | ICustomItem)[];

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { IResponseItem } from '../../../models/response-item.model';
-import { FilterService } from '../../../core/services/filter.service';
-import { RequestService } from '../../../core/services/request.service';
-import { IAppState } from 'src/app/redux/state/app.state';
-import { getAllVideoCards } from '../../../redux/selectors/video-cards.selector';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { ICustomItem } from 'src/app/models/custom-item.model';
+
+import { IResponseItem } from '@core/models/response-item.model';
+import { FilterService } from '@core/services/filter.service';
+import { RequestService } from '@core/services/request.service';
+import { ICustomItem } from '@core/models/custom-item.model';
+import { IAppState } from '@redux/state/app.state';
+import { getAllVideoCards } from '@redux/selectors/video-cards.selector';
 
 @Component({
   selector: 'app-search-list',

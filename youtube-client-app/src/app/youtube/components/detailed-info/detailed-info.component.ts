@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IResponseItem } from '../../../models/response-item.model';
-import { select, Store } from '@ngrx/store';
-import { IAppState } from 'src/app/redux/state/app.state';
-import { getAllVideoCards } from 'src/app/redux/selectors/video-cards.selector';
 import { Subscription } from 'rxjs';
-import { ICustomItem } from 'src/app/models/custom-item.model';
+import { select, Store } from '@ngrx/store';
+
+import { IResponseItem } from '@core/models/response-item.model';
+import { ICustomItem } from '@core/models/custom-item.model';
+import { IAppState } from '@redux/state/app.state';
+import { getAllVideoCards } from '@redux/selectors/video-cards.selector';
+
 @Component({
   selector: 'app-detailed-info',
   templateUrl: './detailed-info.component.html',

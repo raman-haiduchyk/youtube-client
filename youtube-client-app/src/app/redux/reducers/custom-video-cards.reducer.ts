@@ -1,5 +1,5 @@
-import { IVideoCardsState, initialVideoCardsState } from '../state/video-cards.state';
-import { CustomVideoCardsActionTypes, SetCustomVideoCards } from '../actions/custom-video-cards.action';
+import { IVideoCardsState, initialVideoCardsState } from '@redux/state/video-cards.state';
+import { CustomVideoCardsActionTypes, SetCustomVideoCards } from '@redux/actions/custom-video-cards.action';
 
 export function customVideoCardReducer (
   state: IVideoCardsState = initialVideoCardsState,

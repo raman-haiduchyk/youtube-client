@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-
-import { IResponseItem } from '../../models/response-item.model';
+import { IResponseItem } from '@core/models/response-item.model';
 
 export enum VideoCardsActionTypes {
   setAPICards = 'setAPICards',

@@ -3,12 +3,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Subscription, fromEvent, from } from 'rxjs';
 import { map, debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
-import { RequestService } from '../../services/request.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
+import { LoginService } from '@core/services/login.service';
 import { Store } from '@ngrx/store';
-import { IAppState } from 'src/app/redux/state/app.state';
-import { GetAPIVideoCards, VideoCardsActionTypes } from 'src/app/redux/actions/video-cards.action';
+import { IAppState } from '@redux/state/app.state';
+import { VideoCardsActionTypes } from '@redux/actions/video-cards.action';
 
 @Component({
   selector: 'app-header',
@@ -26,13 +25,12 @@ export class HeaderComponent implements OnInit {
   constructor(
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private requestService: RequestService,
     private loginService: LoginService,
     private router: Router,
     private store: Store<IAppState>
   ) {
-    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/filter-icon.svg'));
-    matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logout-icon.svg'));
+    matIconRegistry.addSvgIcon('filter', this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/filter-icon.svg'));
+    matIconRegistry.addSvgIcon('logout', this.domSanitizer.bypassSecurityTrustResourceUrl('src/assets/icons/logout-icon.svg'));
   }
 
   public ngOnInit(): void {

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './components/admin/admin.component';
-import { DetailedInfoComponent } from './components/detailed-info/detailed-info.component';
-import { SearchListComponent } from './components/search-list/search-list.component';
+import { AdminComponent } from '@youtube/components/admin/admin.component';
+import { DetailedInfoComponent } from '@youtube/components/detailed-info/detailed-info.component';
+import { SearchListComponent } from '@youtube/components/search-list/search-list.component';
 
 const routes: Routes = [
   { path: '', component: SearchListComponent },

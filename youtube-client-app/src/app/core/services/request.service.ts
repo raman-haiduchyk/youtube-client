@@ -1,9 +1,9 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { ISearchResponse } from '../../models/search-response.model';
-import { IResponseItem } from '../../models/response-item.model';
+import { ISearchResponse } from '@core/models/search-response.model';
+import { IResponseItem } from '@core/models/response-item.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { retry, map, combineAll, switchMap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { retry, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Injectable()

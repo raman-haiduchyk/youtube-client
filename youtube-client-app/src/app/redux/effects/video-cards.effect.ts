@@ -1,9 +1,9 @@
-import {Effect, ofType, Actions} from '@ngrx/effects';
-import { VideoCardsActionTypes, SetNewVideoCards } from '../actions/video-cards.action';
 import { Injectable } from '@angular/core';
-import { GetAPIVideoCards } from '../actions/video-cards.action';
-import { RequestService } from '../../core/services/request.service';
 import { switchMap, map } from 'rxjs/operators';
+import { Effect, ofType, Actions } from '@ngrx/effects';
+import { VideoCardsActionTypes, SetNewVideoCards } from '@redux/actions/video-cards.action';
+import { GetAPIVideoCards } from '@redux/actions/video-cards.action';
+import { RequestService } from '@core/services/request.service';
 
 @Injectable()
 export class VideoCardsEffect {

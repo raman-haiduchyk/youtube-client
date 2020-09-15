@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { FilterService } from '../../services/filter.service';
+import { FilterService } from '@core/services/filter.service';
 import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
 
