@@ -1,5 +1,7 @@
 <div class="card">
-
+  <button mat-raised-button color="warn" (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
   <img src={{item.snippet.thumbnails.high.url}}>
 
   <div class="info" [appDateToBorderColor]="item.snippet.publishedAt">

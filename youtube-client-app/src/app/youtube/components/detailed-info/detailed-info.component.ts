@@ -47,4 +47,8 @@ export class DetailedInfoComponent implements OnInit {
     });
   }
 
+  public onClose(): void {
+    this.router.navigate(['main']);
+  }
+
 }
