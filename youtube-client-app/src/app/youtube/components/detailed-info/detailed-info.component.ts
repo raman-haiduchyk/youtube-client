@@ -43,7 +43,6 @@ export class DetailedInfoComponent implements OnInit {
           this.publishedAt = (new Date(this.item.snippet.publishedAt)).toDateString();
         }
       );
-
     });
   }
 
