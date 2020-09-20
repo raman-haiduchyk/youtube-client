@@ -1,0 +1,21 @@
+<div class="main-header-part">
+  <mat-icon class="icon logo">play_circle_filled</mat-icon>
+  <mat-form-field class="search-video-input">
+    <input matInput id="search-input" placeholder="Search for video">
+  </mat-form-field>
+
+  <button mat-mini-fab color="primary" class="header-button" aria-label="filter icon" (click)="showFilter()">
+    <mat-icon svgIcon="filter"></mat-icon>
+  </button>
+
+  <div class="name">{{userName}}</div>
+  <button mat-mini-fab class="header-button" aria-label="logout icon" (click)="logOut()" disabled ="{{!logoutIsShown}}" >
+    <mat-icon svgIcon="logout"></mat-icon>
+  </button>
+
+</div>
+
+<ng-template [ngIf]="filterIsShown">
+  <app-filter-block></app-filter-block>
+</ng-template>
+

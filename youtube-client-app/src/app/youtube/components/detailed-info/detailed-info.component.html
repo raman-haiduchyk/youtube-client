@@ -1,0 +1,43 @@
+<div class="card">
+  <button mat-raised-button color="warn" (click)="onClose()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <img src={{item.snippet.thumbnails.high.url}}>
+
+  <div class="info" [appDateToBorderColor]="item.snippet.publishedAt">
+
+    <div class="card-header">
+      <h2>{{item.snippet.title}}:</h2>
+      <p>{{publishedAt}}</p>
+    </div>
+
+
+    <h3>Description:</h3>
+
+    <p>{{item.snippet.description}}</p>
+
+    <div class="stats">
+      <div>
+        <mat-icon>remove_red_eye</mat-icon>
+        {{item.statistics.viewCount}}
+      </div>
+
+      <div>
+        <mat-icon svgIcon="like"></mat-icon>
+        {{item.statistics.likeCount}}
+      </div>
+
+      <div>
+        <mat-icon svgIcon="dislike"></mat-icon>
+        {{item.statistics.dislikeCount}}
+      </div>
+
+      <div>
+        <mat-icon>comment</mat-icon>
+        {{item.statistics.commentCount}}
+      </div>
+    </div>
+
+  </div>
+
+</div>

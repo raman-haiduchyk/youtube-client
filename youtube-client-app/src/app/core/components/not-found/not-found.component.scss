@@ -1,0 +1,16 @@
+:host{
+  padding-top:150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-icon{
+  height: 200px;
+  width: 200px;
+}
+
+p{
+  font-weight: 600;
+}

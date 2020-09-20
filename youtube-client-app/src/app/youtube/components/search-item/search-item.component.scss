@@ -1,0 +1,45 @@
+mat-card {
+  width: 340px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  background-color: whitesmoke;
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.5);
+  img {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+mat-card-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    margin: 0 0 0 10px;
+    mat-icon {
+      vertical-align: middle;
+    }
+  }
+  margin-bottom: 20px;
+}
+
+mat-card-actions {
+  button {
+    color: white;
+    background-color: #2f80ed;
+  }
+}
+
+mat-card-title {
+  height: 100%;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,47 @@
+:host {
+  width: 100%;
+  padding: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+}
+
+.main-header-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 40px;
+  height: auto;
+  width: auto;
+  color: #2f80ed;
+}
+
+.logo {
+  font-size: 60px;
+  flex-basis: 25%;
+  text-align: end;
+  padding-right: 2%;
+}
+
+.header-button {
+  background-color: #2f80ed;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.name {
+  flex-basis: 20%;
+  text-align: end;
+}
+
+.search-video-input {
+  flex-basis: 45%;
+}
+
+

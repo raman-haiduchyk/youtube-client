@@ -1,0 +1,22 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: whitesmoke;
+  text-decoration: underline;
+  margin: 3px;
+}
+
+div {
+  margin: 3px;
+}
+
+.filter-video-input {
+  margin-left: 5px;
+  width: 15%;
+  margin: 3px;
+}
